@@ -3,21 +3,22 @@
 A from-beginner-to-senior-staff journey through Redis. One module per day, in full
 detail, with diagrams. Each lesson lives under [`redis/`](./redis/).
 
-> **Currently at:** Module 2 → **2.2 Lists** ✅ (first lesson written)
+> **Currently at:** Module 1 fully done ✅ · Module 2 → **2.1 Strings** + **2.2 Lists** done ✅
+> · next up: **2.3 Hashes**
 
 ---
 
 ## 📚 Progress Tracker
 
 ### Module 1 — Foundations: what Redis is and how to talk to it
-- [ ] 1.1  What is Redis and why it exists
-- [ ] 1.2  Installing & running Redis (Docker, `redis-cli`)
-- [ ] 1.3  The single-threaded mental model
-- [ ] 1.4  The RESP protocol
-- [ ] 1.5  The event loop & I/O multiplexing
+- [x] 1.1  What is Redis and why it exists → [`redis/module-01-foundations/1.1-what-is-redis.md`](./redis/module-01-foundations/1.1-what-is-redis.md)
+- [x] 1.2  Installing & running Redis (Docker, `redis-cli`) → [`redis/module-01-foundations/1.2-installing-and-running.md`](./redis/module-01-foundations/1.2-installing-and-running.md)
+- [x] 1.3  The single-threaded mental model → [`redis/module-01-foundations/1.3-single-threaded-model.md`](./redis/module-01-foundations/1.3-single-threaded-model.md)
+- [x] 1.4  The RESP protocol → [`redis/module-01-foundations/1.4-resp-protocol.md`](./redis/module-01-foundations/1.4-resp-protocol.md)
+- [x] 1.5  The event loop & I/O multiplexing → [`redis/module-01-foundations/1.5-event-loop-io-multiplexing.md`](./redis/module-01-foundations/1.5-event-loop-io-multiplexing.md)
 
 ### Module 2 — Data types and their internals
-- [ ] 2.1  Strings (int / embstr / raw encodings)
+- [x] 2.1  Strings (int / embstr / raw encodings) → [`redis/module-02-data-types/2.1-strings.md`](./redis/module-02-data-types/2.1-strings.md)
 - [x] **2.2  Lists (listpack → quicklist)** → [`redis/module-02-data-types/2.2-lists.md`](./redis/module-02-data-types/2.2-lists.md)
 - [ ] 2.3  Hashes (listpack → hashtable)
 - [ ] 2.4  Sets (intset → listpack → hashtable)
