@@ -3,8 +3,9 @@
 A from-beginner-to-senior-staff journey through Redis. One module per day, in full
 detail, with diagrams. Each lesson lives under [`redis/`](./redis/).
 
-> **Currently at:** Module 1 fully done ✅ · Module 2 → **2.1 Strings** + **2.2 Lists** done ✅
-> · next up: **2.3 Hashes**
+> **Currently at:** Modules 1 & 3 fully done ✅ · Module 2 → **2.1–2.5 done** ✅ (2.6 Streams + 2.7 specialized types
+> parked as bonus chapters) · Module 4 → **4.1 RDB** done ✅
+> · next up: **4.2 AOF and fsync policies**
 
 ---
 
@@ -18,23 +19,31 @@ detail, with diagrams. Each lesson lives under [`redis/`](./redis/).
 - [x] 1.5  The event loop & I/O multiplexing → [`redis/module-01-foundations/1.5-event-loop-io-multiplexing.md`](./redis/module-01-foundations/1.5-event-loop-io-multiplexing.md)
 
 ### Module 2 — Data types and their internals
-- [x] 2.1  Strings (int / embstr / raw encodings) → [`redis/module-02-data-types/2.1-strings.md`](./redis/module-02-data-types/2.1-strings.md)
-- [x] **2.2  Lists (listpack → quicklist)** → [`redis/module-02-data-types/2.2-lists.md`](./redis/module-02-data-types/2.2-lists.md)
-- [ ] 2.3  Hashes (listpack → hashtable)
-- [ ] 2.4  Sets (intset → listpack → hashtable)
-- [ ] 2.5  Sorted sets (skiplist + hashtable)
-- [ ] 2.6  Streams (entries, IDs, MAXLEN)
-- [ ] 2.7  Specialized: Bitmaps, HyperLogLog, Geo
+- [x] 2.1  Strings (int / embstr / raw encodings) → [`2.1-strings.md`](./redis/module-02-data-types/2.1-strings.md)
+- [x] 2.2  Lists (listpack → quicklist) → [`2.2-lists.md`](./redis/module-02-data-types/2.2-lists.md)
+- [x] 2.3  Hashes (listpack → hashtable) → [`2.3-hashes.md`](./redis/module-02-data-types/2.3-hashes.md)
+- [x] 2.4  Sets (intset → listpack → hashtable) → [`2.4-sets.md`](./redis/module-02-data-types/2.4-sets.md)
+- [x] 2.5  Sorted sets (skiplist + hashtable) → [`2.5-sorted-sets.md`](./redis/module-02-data-types/2.5-sorted-sets.md)
+- [ ] 2.6  Streams (entries, IDs, MAXLEN) — *bonus chapter, deferred*
+- [ ] 2.7  Specialized: Bitmaps, HyperLogLog, Geo — *bonus chapter, deferred*
 
-### Module 3 — Atomicity & coordination
-- [ ] 3.1  Per-command atomicity
-- [ ] 3.2  `MULTI / EXEC`
-- [ ] 3.3  `WATCH` and optimistic CAS
-- [ ] 3.4  Lua scripts (`EVAL`) and server-side functions
-- [ ] 3.5  Pipelining
+### Module 3 — Atomicity & coordination ✅
+- [x] 3.1  Execution model & per-command atomicity → [`3.1-execution-model-and-atomicity.md`](./redis/module-03-atomicity-coordination/3.1-execution-model-and-atomicity.md)
+- [x] 3.2  Atomic commands (`INCR`, `SET NX`, `HINCRBY`, `LMOVE`, `ZADD GT`) → [`3.2-atomic-commands.md`](./redis/module-03-atomicity-coordination/3.2-atomic-commands.md)
+- [x] 3.3  `MULTI / EXEC` — transactions and why there's no rollback → [`3.3-multi-exec.md`](./redis/module-03-atomicity-coordination/3.3-multi-exec.md)
+- [x] 3.4  `WATCH` & optimistic CAS → [`3.4-watch-optimistic-cas.md`](./redis/module-03-atomicity-coordination/3.4-watch-optimistic-cas.md)
+- [x] 3.5  Lua scripting (`EVAL`, `EVALSHA`, the script cache) → [`3.5-lua-scripting.md`](./redis/module-03-atomicity-coordination/3.5-lua-scripting.md)
+- [x] 3.5b 🔧 **Project:** sliding window rate limiter → [`3.5b-project-sliding-window-rate-limiter.md`](./redis/module-03-atomicity-coordination/3.5b-project-sliding-window-rate-limiter.md)
+- [x] 3.6  Redis Functions (`FUNCTION LOAD`, `FCALL`) → [`3.6-redis-functions.md`](./redis/module-03-atomicity-coordination/3.6-redis-functions.md)
+- [x] 3.7  Pipelining → [`3.7-pipelining.md`](./redis/module-03-atomicity-coordination/3.7-pipelining.md)
+
+> **On 3.8–3.11** (tool comparison, coordination patterns, failure scenarios, performance): folded into 3.1–3.7 rather
+> than written separately. The comparison tables live in 3.3/3.5/3.7; coordination patterns — counters, inventory
+> reservation, idempotency, rate limiting — are covered in 3.2/3.4/3.5/3.5b; `busy-reply-threshold` and `SCRIPT KILL`
+> are in the 3.5 appendix. Crash durability belongs to Module 4 and replica lag to Module 6, where they're taught properly.
 
 ### Module 4 — Persistence
-- [ ] 4.1  RDB snapshots and `fork()`
+- [x] 4.1  RDB snapshots and `fork()` → [`4.1-rdb-snapshots-and-fork.md`](./redis/module-04-persistence/4.1-rdb-snapshots-and-fork.md)
 - [ ] 4.2  AOF and fsync policies
 - [ ] 4.3  Hybrid persistence
 - [ ] 4.4  Backup & recovery patterns
