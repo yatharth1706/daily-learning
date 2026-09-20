@@ -4,8 +4,8 @@ A from-beginner-to-senior-staff journey through Redis. One module per day, in fu
 detail, with diagrams. Each lesson lives under [`redis/`](./redis/).
 
 > **Currently at:** Modules 1 & 3 fully done ✅ · Module 2 → **2.1–2.5 done** ✅ (2.6 Streams + 2.7 specialized types
-> parked as bonus chapters) · Module 4 → **4.1 RDB** done ✅
-> · next up: **4.2 AOF and fsync policies**
+> parked as bonus chapters) · Module 4 → **4.1 RDB** + **4.2 AOF** done ✅
+> · next up: **4.3 Hybrid persistence**
 
 ---
 
@@ -44,7 +44,7 @@ detail, with diagrams. Each lesson lives under [`redis/`](./redis/).
 
 ### Module 4 — Persistence
 - [x] 4.1  RDB snapshots and `fork()` → [`4.1-rdb-snapshots-and-fork.md`](./redis/module-04-persistence/4.1-rdb-snapshots-and-fork.md)
-- [ ] 4.2  AOF and fsync policies
+- [x] 4.2  AOF and fsync policies → [`4.2-aof-and-fsync-policies.md`](./redis/module-04-persistence/4.2-aof-and-fsync-policies.md)
 - [ ] 4.3  Hybrid persistence
 - [ ] 4.4  Backup & recovery patterns
 
